@@ -121,7 +121,7 @@ For the AITODv2 dataset.
 python tools.train.py configs/SOD_DEDDH/aitodv2_cascade_rfla_kld_WaveFpn_decouplehead_0002_20e.py
 ```
 
-#### testing 
+#### Testing 
 
 testing on VisDrone2019 validation set
 
