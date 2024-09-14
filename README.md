@@ -25,7 +25,7 @@ conda create -n sod python=3.8
 conda activate sod
 ```
 
-#### b. Install PyTorch stable or nightly and torchvision following the [official instructions](https://pytorch.org/), e.g.,
+#### b. Install pytorch, torchvision and torchaudio following the [official instructions](https://pytorch.org/), e.g.,
 
 ```shell
 pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
@@ -58,10 +58,8 @@ pip install -v -e .
 
 ## Prepare datasets
 
-We only provide the dataset in JSON format.
-
-- VisDrone2019: 
-- AITODv2: 
+- [VisDrone2019 download link](https://github.com/VisDrone/VisDrone-Dataset) 
+- [AITODv2 download link](https://chasel-tsui.github.io/AI-TOD-v2/) 
 
 Our data folder structure is as follows:
 
@@ -105,7 +103,7 @@ If your data folder structure is different, you may need to change the correspon
 
 ## Run
 
-The SOD-DEDDH's config files are in [configs/rfla/SOD_DEDDH](https://github.com/jwwangchn/NWD/tree/main/configs/SOD_DEDDH).
+The SOD-DEDDH's config files are in [configs/rfla/SOD_DEDDH](https://github.com/SYLan2019/SOD-DEDDH/tree/main/configs/SOD_DEDDH).
 
 Please see MMDetection full tutorials [with existing dataset](docs/1_exist_data_model.md) for beginners.
 
@@ -114,13 +112,13 @@ Please see MMDetection full tutorials [with existing dataset](docs/1_exist_data_
 For the VisDrone2019 dataset.
 
 ```shell
-python tools/train.py configs/rfla/
+python tools/train.py configs/SOD_DEDDH/visdrone2019_cascade_r50_rfla_kld_WaveFpn_decouplerefinehead_001_20e.py
 ```
 
 For the AITODv2 dataset.
 
 ```shell
-python tools.train.py configs/rfla/
+python tools.train.py configs/SOD_DEDDH/aitodv2_cascade_rfla_kld_WaveFpn_decouplehead_0002_20e.py
 ```
 
 #### testing 
@@ -128,11 +126,11 @@ python tools.train.py configs/rfla/
 testing on VisDrone2019 validation set
 
 ```shell
-python tools/test.py configs/rfla/ your_training_weight.pth --eval bbox
+python tools/test.py configs/SOD_DEDDH/visdrone2019_cascade_r50_rfla_kld_WaveFpn_decouplerefinehead_001_20e.py your_training_weight.pth --eval bbox
 ```
 
 testing on AITODv2 test set
 
 ```shell
-python tools/test.py configs/rfla/ your_training_weight.pth --eval bbox
+python tools/test.py configs/SOD_DEDDH/aitodv2_cascade_rfla_kld_WaveFpn_decouplehead_0002_20e.py your_training_weight.pth --eval bbox
 ```
