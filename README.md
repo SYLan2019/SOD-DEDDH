@@ -2,6 +2,10 @@
 
 Small Object Detection Using Detail Enhancement and Decoupled Detection Head
 
+Submitted to ICASSP2025.
+
+
+
 # Preparation work
 
 We have used the following versions of OS and softwares:
